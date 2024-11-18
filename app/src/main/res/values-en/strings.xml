@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Conversor de Temperatura</string>
     <string name="temperature">Temperatura:</string>
     <string name="hint_temperature">Digite temperatura</string>
     <string name="celsius">Celsius</string>
