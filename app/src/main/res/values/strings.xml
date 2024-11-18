@@ -6,4 +6,5 @@
     <string name="msgCtoF">Realizada a conversão de Celsius para Fahrenheit.</string>
     <string name="msgFtoC">Realizada a conversão de Fahrenheit para Celsius.</string>
     <string name="error_popup_notify">Não foi possível realizar a conversão de temperatura dos com dados informados.</string>
+    <string name="app_name">Conversor de Temperatura</string>
 </resources>

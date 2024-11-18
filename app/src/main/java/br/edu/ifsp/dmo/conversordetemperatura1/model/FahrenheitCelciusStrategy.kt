@@ -1,11 +1,12 @@
 package br.edu.ifsp.dmo.conversordetemperatura1.model
 
-class FahrenheitStrategy : ConversorTemperatura {
+object FahrenheitCelciusStrategy : ConversorTemperatura {
 
     override fun converter(temperature: Double): Double {
-        return 1.8 * temperature + 32
+        return (temperature - 32) * 5/9
     }
+
     override fun getScale(): String {
-        return "ºF"
+        return "ºC"
     }
 }

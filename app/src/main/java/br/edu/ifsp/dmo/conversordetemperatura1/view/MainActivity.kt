@@ -2,15 +2,17 @@ package br.edu.ifsp.dmo.conversordetemperatura1.view
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo.conversordetemperatura1.R
 import br.edu.ifsp.dmo.conversordetemperatura1.databinding.ActivityMainBinding
-import br.edu.ifsp.dmo.conversordetemperatura1.model.CelsiusStrategy
+import br.edu.ifsp.dmo.conversordetemperatura1.model.CelsiusFahrenheitStrategy
+import br.edu.ifsp.dmo.conversordetemperatura1.model.CelsiusKelvinStrategy
 import br.edu.ifsp.dmo.conversordetemperatura1.model.ConversorTemperatura
-import br.edu.ifsp.dmo.conversordetemperatura1.model.FahrenheitStrategy
+import br.edu.ifsp.dmo.conversordetemperatura1.model.FahrenheitCelciusStrategy
+import br.edu.ifsp.dmo.conversordetemperatura1.model.FahrenheitKelvinStrategy
+import br.edu.ifsp.dmo.conversordetemperatura1.model.KelvinCelciusStrategy
+import br.edu.ifsp.dmo.conversordetemperatura1.model.KelvinFahrenheitStrategy
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,10 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(R.layout.activity_main)
+
+        setClickListener()
 
     }
 /**
@@ -41,12 +44,29 @@ class MainActivity : AppCompatActivity() {
  * para realizar a conversão.
  */
 private fun setClickListener() {
-    binding.btnCelsius.setOnClickListener {
-        handleConversion(CelsiusStrategy)
+    binding.buttonCelsiusFah.setOnClickListener {
+        handleConversion(CelsiusFahrenheitStrategy)
     }
-    binding.btnFahrenheit.setOnClickListener(View.OnClickListener {
-        handleConversion(FahrenheitStrategy)
-    })
+
+    binding.buttonCelsiusKel.setOnClickListener {
+        handleConversion(CelsiusKelvinStrategy)
+    }
+
+    binding.buttonFahrenheitCel.setOnClickListener {
+        handleConversion(FahrenheitCelciusStrategy)
+    }
+
+    binding.buttonFahrenheitKel.setOnClickListener {
+        handleConversion(FahrenheitKelvinStrategy)
+    }
+
+    binding.buttonKelvinCel.setOnClickListener {
+        handleConversion(KelvinCelciusStrategy)
+    }
+
+    binding.buttonKelvinFah.setOnClickListener {
+        handleConversion(KelvinFahrenheitStrategy)
+    }
 }
     /**
      * Método responsável por recuperar o valor digitado no edittext
@@ -75,13 +95,33 @@ private fun setClickListener() {
                 converterStrategy.converter(inputValue),
                 converterStrategy.getScale()
             )
-            binding.textviewResultMessage.text = if (this.converterStrategy is
-                        CelsiusStrategy
-            ) {
-                getString(R.string.msgFtoC)
-            } else {
-                getString(R.string.msgCtoF)
-            }
+            binding.textviewResultMessage.text =
+
+                when (this.converterStrategy) {
+                    is CelsiusFahrenheitStrategy -> {
+                        getString(R.string.msgCtoF)
+                    }
+
+                    is CelsiusKelvinStrategy -> {
+                        getString(R.string.msgCtoK)
+                    }
+
+                    is FahrenheitCelciusStrategy -> {
+                        getString(R.string.msgFtoC)
+                    }
+
+                    is FahrenheitKelvinStrategy -> {
+                        getString(R.string.msgFtoK)
+                    }
+
+                    is KelvinCelciusStrategy -> {
+                        getString(R.string.msgKtoC)
+                    }
+
+                    else -> {
+                        getString(R.string.msgKtoF)
+                    }
+                }
         } catch (e: Exception) {
             Toast.makeText(this, getString(R.string.error_popup_notify), Toast.LENGTH_SHORT).show()
             Log.e("APP_DMO", e.stackTraceToString())
