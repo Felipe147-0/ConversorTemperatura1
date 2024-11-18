@@ -42,8 +42,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
     <EditText
         android:id="@+id/edittext_temperature"
         android:layout_width="0dp"
