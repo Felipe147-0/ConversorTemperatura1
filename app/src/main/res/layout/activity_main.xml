@@ -8,21 +8,19 @@
     android:padding="8dp"
     tools:context=".view.MainActivity">
 
-    <!-- Definição das guidelines. São duas guidelines horizontais
-         que dividem a tela em 30% e 70% -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical1"
@@ -31,10 +29,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
-    <!-- Elementos para entrada de dados, utilizaremos uma textview
-         para mostrar a mensagem e um edittext para a leitura de dados.
-         O posicionamento do textview é em relação ao pai contudo
-         o edittext é posicionado em relação ao textview e ao pai. -->
 
     <TextView
         android:id="@+id/textview_temperature"
@@ -47,6 +41,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
     <EditText
         android:id="@+id/edittext_temperature"
         android:layout_width="0dp"
@@ -58,15 +55,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textview_temperature" />
 
-    <!-- Os botões de ação formam uma chain visto que estão relacionados
-    um com outro e também com a guideline de 30%. -->
 
     <Button
         android:id="@+id/button_celsius_fah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/celsiusToF"
+        android:text="@string/celsiusFah"
         android:textAllCaps="true"
         app:layout_constraintBottom_toTopOf="@id/button_fahrenheit_cel"
         app:layout_constraintEnd_toEndOf="@id/button_kelvin_cel"
@@ -78,7 +73,7 @@
         android:id="@+id/button_fahrenheit_cel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fahrenheitToC"
+        android:text="@string/fahrenheitCel"
         android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@id/button_kelvin_cel"
         app:layout_constraintEnd_toEndOf="@id/button_kelvin_cel"
@@ -89,7 +84,7 @@
         android:id="@+id/button_kelvin_cel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/kelvinToC"
+        android:text="@string/kelvinCel"
         android:layout_marginBottom="16dp"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="@id/guideline_vertical1"
@@ -97,14 +92,13 @@
         app:layout_constraintTop_toBottomOf="@id/button_fahrenheit_cel"
         app:layout_constraintBottom_toTopOf="@id/textview_result_number"/>
 
-    <!-- Botões da direita -->
 
     <Button
         android:id="@+id/button_celsius_kel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/celsiusToK"
+        android:text="@string/celsiusKel"
         android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@id/button_kelvin_fah"
         app:layout_constraintEnd_toEndOf="@id/button_kelvin_fah"
@@ -115,7 +109,7 @@
         android:id="@+id/button_fahrenheit_kel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fahrenheitToK"
+        android:text="@string/fahrenheitKel"
         android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@id/button_kelvin_fah"
         app:layout_constraintEnd_toEndOf="@id/button_kelvin_fah"
@@ -126,7 +120,7 @@
         android:id="@+id/button_kelvin_fah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/kelvinToF"
+        android:text="@string/kelvinFah"
         android:layout_marginBottom="16dp"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"

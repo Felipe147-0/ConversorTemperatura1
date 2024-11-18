@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Convertidor de temperatura</string>
+    <string name="temperature">Temperatura:</string>
+    <string name="hint_temperature">Introduzca la temperatura</string>
+    <string name="msgCtoF">Se realizó la conversión de Celsius a Fahrenheit.</string>
+    <string name="msgCtoK">Se realizó la conversión de Celsius a Kelvin.</string>
+    <string name="msgFtoC">Se realizó la conversión de Fahrenheit a Celsius.</string>
+    <string name="msgFtoK">Se realizó la conversión de Fahrenheit a Kelvin.</string>
+    <string name="msgKtoC">Se realizó la conversión de Kelvin a Celsius.</string>
+    <string name="msgKtoF">Se realizó la conversión de Kelvin a Fahrenheit.</string>
+    <string name="error_popup_notify">No fue posible realizar la conversión de temperatura con los datos proporcionados.</string>
+</resources>

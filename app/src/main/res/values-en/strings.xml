@@ -1,10 +1,12 @@
 <resources>
-    <string name="error_popup_notify">impossible to convert with the data.</string>
     <string name="app_name">Temperature Converter</string>
-    <string name="temperature">"Temperature: "</string>
-    <string name="hint_temperature">Type tempetarure</string>
-    <string name="celsius">Celsius</string>
-    <string name="fahrenheit">Fahrenheit</string>
-    <string name="msgCtoF">Converted from Celsius to Fahrenheit.</string>
-    <string name="msgFtoC">Converted from Fahrenheit to Celsius.</string>
+    <string name="temperature">Temperature:</string>
+    <string name="hint_temperature">Type Temperature:</string>
+    <string name="msgCtoF">Conversion from Celsius to Fahrenheit performed.</string>
+    <string name="msgCtoK">Conversion from Celsius to Kelvin was carried out.</string>
+    <string name="msgFtoC">Fahrenheit to Celsius conversion performed.</string>
+    <string name="msgFtoK">Fahrenheit to Kelvin conversion performed.</string>
+    <string name="msgKtoC">Conversion from Kelvin to Celsius was carried out.</string>
+    <string name="msgKtoF">Conversion from Kelvin to Fahrenheit performed.</string>
+    <string name="error_popup_notify">It was not possible to perform the temperature conversion with the data provided.</string>
 </resources>
