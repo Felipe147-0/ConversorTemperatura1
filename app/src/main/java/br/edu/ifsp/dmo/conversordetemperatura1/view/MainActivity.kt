@@ -23,12 +23,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         setClickListener()
 
     }
-/**
+/*
  * Diferente dos projetos anteriores, nesse exemplo o clique nos botões
  * é tratado com a implementação por uma lambda. As duas formas de
  * implementação indicadas são válidas, no botão btnCelsius adotou-se
@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
 private fun setClickListener() {
     binding.buttonCelsiusFah.setOnClickListener {
         handleConversion(CelsiusFahrenheitStrategy)
+
+
     }
 
     binding.buttonCelsiusKel.setOnClickListener {
